@@ -82,4 +82,12 @@ public class LengthTest {
 		boolean result = feet.compare(yard);
 		Assert.assertTrue(result);
 	}
+	
+	@Test
+    public void given3FeetAndNull_WhenCompared_ShouldReturnFalse() {
+        Length null1 = new Length(Length.Unit.NULL, 1.0);
+        Length feet = new Length(Length.Unit.FEET, 3.0);
+        boolean result = feet.compare(null1);
+        Assert.assertFalse(result);
+    }
 }

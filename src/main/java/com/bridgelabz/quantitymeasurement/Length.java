@@ -2,7 +2,7 @@ package com.bridgelabz.quantitymeasurement;
 
 public class Length {
 	
-	public enum Unit {FEET, INCH, YARD}
+	public enum Unit {FEET, INCH, YARD, NULL}
     private final Unit unit;
     private final double value;
     private static final double FEET_TO_INCH = 12.0;
