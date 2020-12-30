@@ -2,40 +2,25 @@ package com.bridgelabz.quantitymeasurement;
 
 public class Length {
 
-	public enum Unit {
-		FEET, INCH, YARD, NULL
+	private final double value1;
+    private final double value2;
+    private final UnitConversionEnum unit;
+
+    public Length(UnitConversionEnum unit, double value1, double value2) {
+        this.unit = unit;
+        this.value1 = value1;
+        this.value2 = 0.0;
+    }
+    
+    public Length(UnitConversionEnum unit, double value1) {
+        this.unit = unit;
+        this.value1 = value1;
+        this.value2 = 0.0;
+    }
+    	public boolean compare() {
+            return unit.checkConversion(value1, value2);
 	}
 
-	private final Unit unit;
-	private final double value;
-	private static final double FEET_TO_INCH = 12.0;
-
-	public Length(Unit unit, double value) {
-		this.unit = unit;
-		this.value = value;
-	}
-
-	public boolean compare(Length that) {
-		if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.FEET))
-			return Double.compare(this.value, that.value) == 0;
-		if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
-			return Double.compare(this.value * FEET_TO_INCH, that.value) == 0;
-		if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.FEET))
-			return Double.compare(this.value, that.value * FEET_TO_INCH) == 0;
-		if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.INCH))
-			return Double.compare(this.value, that.value) == 0;
-		if (this.unit.equals(Unit.YARD) && that.unit.equals(Unit.YARD))
-			return Double.compare(this.value, that.value) == 0;
-		if (this.unit.equals(Unit.YARD) && that.unit.equals(Unit.FEET))
-			return Double.compare(this.value * 3, that.value) == 0;
-		if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.YARD))
-			return Double.compare(this.value, that.value * 3) == 0;
-		if (this.unit.equals(Unit.YARD) && that.unit.equals(Unit.INCH))
-			return Double.compare(this.value * 36, that.value) == 0;
-		if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.YARD))
-			return Double.compare(this.value, that.value * 36) == 0;
-		return false;
-	}
 
 	@Override
 	public boolean equals(Object o) {
@@ -44,6 +29,7 @@ public class Length {
 		if (o == null || getClass() != o.getClass())
 			return false;
 		Length length = (Length) o;
-		return Double.compare(length.value, value) == 0 && unit == length.unit;
+		return Double.compare(length.value1, value1) == 0 &&
+                Double.compare(length.value2, value2) == 0 && unit == length.unit;
 	}
 }
