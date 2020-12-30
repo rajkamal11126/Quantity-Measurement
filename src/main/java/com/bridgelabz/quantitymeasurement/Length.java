@@ -4,14 +4,15 @@ public class Length {
 
 	private final double value1;
 	private final double value2;
-	private final UnitConverterEnum unit2;
-	private final UnitConverterEnum unit1;
+	private final LengthConverterEnum unit2;
+    private final LengthConverterEnum unit1;
 
-	public Length(UnitConverterEnum unit1, double value1, UnitConverterEnum unit2, double value2) {
+	public Length(LengthConverterEnum unit1, double value1, LengthConverterEnum unit2, double value2) {
+		
 		this.unit1 = unit1;
 		this.unit2 = unit2;
 		this.value1 = value1;
-		this.value2 = 0.0;
+		this.value2 = 0;
 	}
 
 	public boolean compare() {
