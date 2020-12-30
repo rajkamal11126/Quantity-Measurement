@@ -4,21 +4,18 @@ public class Length {
 
 	private final double value1;
     private final double value2;
-    private final UnitConversionEnum unit;
+    private final UnitConverterEnum unit2;
+    private final UnitConverterEnum unit1;
 
-    public Length(UnitConversionEnum unit, double value1, double value2) {
-        this.unit = unit;
+    public Length(UnitConverterEnum unit1, double value1, UnitConverterEnum unit2, double value2) {
+        this.unit1 = unit1;
+        this.unit2 = unit2;
         this.value1 = value1;
         this.value2 = 0.0;
     }
     
-    public Length(UnitConversionEnum unit, double value1) {
-        this.unit = unit;
-        this.value1 = value1;
-        this.value2 = 0.0;
-    }
     	public boolean compare() {
-            return unit.checkConversion(value1, value2);
+    		return Double.compare(unit1.convert(value1), unit2.convert(value2)) == 0;
 	}
 
 
@@ -30,6 +27,8 @@ public class Length {
 			return false;
 		Length length = (Length) o;
 		return Double.compare(length.value1, value1) == 0 &&
-                Double.compare(length.value2, value2) == 0 && unit == length.unit;
+                Double.compare(length.value2, value2) == 0 &&
+                unit2 == length.unit2 &&
+                unit1 == length.unit1;
 	}
 }
