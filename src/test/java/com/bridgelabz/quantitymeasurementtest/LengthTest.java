@@ -6,7 +6,6 @@ import org.junit.Test;
 import com.bridgelabz.quantitymeasurement.Length;
 import com.bridgelabz.quantitymeasurement.LengthConverterEnum;
 
-
 public class LengthTest {
 	@Test
 	public void given0FeetAnd0Feet_ShouldReturnTrue() {
