@@ -7,17 +7,17 @@ import com.bridgelabz.quantitymeasurement.VolumeConverterEnum;
 
 public class VolumeConverterEnumTest {
 	@Test
-	public void givenOneGallon_ShouldReturnThreePointSevenEightLiter() {
-		Assert.assertEquals(3.78, VolumeConverterEnum.GALLON_TO_LITER.convert(1), 0.0);
+	public void givenOneGallon_ShouldReturnThreePointSevenEightLitre() {
+		Assert.assertEquals(3.78, VolumeConverterEnum.GALLON_TO_LITRE.convert(1), 0.0);
 	}
 
 	@Test
-	public void given1Liter_ShouldReturn1Liter() {
-		Assert.assertEquals(1, VolumeConverterEnum.LITER_TO_LITER.convert(1), 0.0);
+	public void given1Litre_ShouldReturn1Litre() {
+		Assert.assertEquals(1, VolumeConverterEnum.LITRE_TO_LITRE.convert(1), 0.0);
 	}
 
 	@Test
-	public void given1000MiliLiter_ShouldReturn1Liter() {
-		Assert.assertEquals(1, VolumeConverterEnum.MILILITER_TO_LITER.convert(1000), 0.0);
+	public void given1000MilliLitre_ShouldReturn1Litre() {
+		Assert.assertEquals(1, VolumeConverterEnum.MILLILITRE_TO_LITRE.convert(1000), 0.0);
 	}
 }

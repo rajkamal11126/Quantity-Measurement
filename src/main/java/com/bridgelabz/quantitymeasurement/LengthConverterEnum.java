@@ -29,7 +29,7 @@ public enum LengthConverterEnum implements IUnitConversion {
 		}
 	};
 
-	public static final double FEET_INCH_MULTIPLIER = 12.0;
-	public static final double YARD_FEET_MULTIPLIER = 3.0;
-	public static final double CENTIMETER_INCH_MULTIPLIER = 0.4;
+	private static final double YARD_FEET_MULTIPLIER = 3;
+    private static final double FEET_INCH_MULTIPLIER = 12;
+    private static final double CENTIMETER_INCH_MULTIPLIER = 0.001;
 }
